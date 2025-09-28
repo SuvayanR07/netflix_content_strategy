@@ -1,7 +1,7 @@
-# Netflix Content Strategy — Catalog Analytics (Python · VS Code · Jupyter)
+# Netflix Content Strategy (Python · VS Code · Jupyter)
 
-> This repository turns the public Netflix catalog metadata into clear, business-ready insights a content team can act on.  
-> Focus: **data/business analytics** (no ML). I run everything from a single Jupyter notebook in VS Code.
+> This repository turns the public Netflix catalog metadata into clear, business-ready insights that a content team can act on.  
+> Focus: **data/business analytics**. I run everything from a single Jupyter notebook in VS Code.
 
 ---
 
@@ -12,7 +12,7 @@ Streaming teams constantly ask:
 - *Is our catalog balanced across ratings and genres?*
 - *Where are we under-serving viewers by genre and country?*
 
-This project answers those questions with a transparent, reproducible analysis of the Netflix catalog dataset from **Kaggle** (`netflix_titles.csv`). It avoids machine learning and stays squarely within an analyst’s toolkit: data cleaning, feature engineering, descriptive analytics, and crisp visuals.
+This project addresses those questions with a transparent analysis of the Netflix catalog dataset from **Kaggle** (`netflix_titles.csv`). It focuses squarely on an analyst’s toolkit: data cleaning, feature engineering, descriptive analytics, and crisp visuals.
 
 ---
 
@@ -21,7 +21,7 @@ This project answers those questions with a transparent, reproducible analysis o
 1) **Catalog Evolution (Supply Mix)**
    - **Question:** How has the catalog grown by *type* (Movies vs TV Shows) over time?
    - **What I do:** Compute and plot titles added per year by type.
-   - **Why it matters:** Guides portfolio planning (e.g., rebalance movie/show mix).
+   - **Why it matters:** Guides portfolio planning (e.g., relevant movie/show mix).
 
 2) **Ratings Composition (Maturity Profile)**
    - **Question:** What is the distribution of content ratings (e.g., TV-14, PG-13)?
@@ -45,9 +45,105 @@ This project answers those questions with a transparent, reproducible analysis o
    - **What I do:** Parse duration and chart **median movie duration by genre**.
    - **Why it matters:** Helps programming calendars and “time to watch” UX rows.
 
-> **Scope note:** I intentionally removed “time-to-platform” and “cleaned CSV export” steps to keep the analysis focused for recruiters and content stakeholders.
-
 ---
 
 ## 🗂️ Repository structure
+
+.
+├── main.ipynb (Jupyter)
+└── reports/
+├── figures/ # PNG charts auto-saved by the notebook
+└── tables/ # CSV tables (e.g., genre matrix, gap tables)
+
+
+---
+
+## 🧪 Methods (what’s inside the notebook)
+
+- **Load & Clean:** lower-case headers, trim whitespace, parse `date_added`, coerce `release_year`, standardize `rating` and `type`, and drop duplicates.
+- **Feature Engineering:**  
+  - `year_added`, `month_added`  
+  - `duration_minutes` (movies direct, TV with a documented heuristic)  
+  - convert comma-separated fields (genres/countries/cast/director) into **lists** for robust `explode` operations
+- **Analysis & Visuals:**  
+  - Trend of titles by year & type  
+  - Rating distribution  
+  - Top genres (overall)  
+  - **Genre × Type** heatmap  
+  - Median **movie duration** by genre  
+  - **Country–Genre gaps** (full table + focused chart for a chosen country)
+
+---
+
+## 📈 Paste-in screenshots (replace with your image paths)
+
+> Replace the image paths below with the PNGs auto-saved into `reports/figures/`.
+
+**Catalog Trend (Movies vs TV Shows)**  
+![Trend — titles per year by type](reports/figures/trend_titles_by_type.png)
+
+**Rating Distribution**  
+![Rating distribution](reports/figures/rating_distribution.png)
+
+**Top 20 Genres**  
+![Top 20 genres](reports/figures/top20_genres.png)
+
+**Genre × Type Heatmap**  
+![Genre × Type heatmap](reports/figures/genre_type_heatmap.png)
+
+**Median Movie Duration by Genre**  
+![Median duration by genre (movies)](reports/figures/median_duration_by_genre_movies.png)
+
+**Country–Genre Content Gaps (example: France)**  
+![Under-indexed genres in France](reports/figures/content_gaps_france.png)
+
+---
+
+## 🧩 How this helps the business
+
+- **Commissioning & Acquisition:**  
+  The **gap analysis** pinpoints under-served genres by country, creating a ready-made shortlist for acquisitions or local commissions.
+
+- **Portfolio Balance & Brand Positioning:**  
+  The **ratings** and **genre mix** reveal where the slate is skewed, informing quarterly targets (e.g., “+X family titles before holidays”).
+
+- **Programming & UX:**  
+  **Duration** insights support scheduling blocks and “quick watch” collections that align with audience time budgets.
+
+- **Leadership Snapshot:**  
+  Two slides—trend and the gap chart for a target market—are enough to brief decision-makers weekly.
+
+---
+
+## 📚 Dataset
+
+- **Source:** Kaggle — *Netflix Movies and TV Shows* (`netflix_titles.csv`).  
+  (Community-compiled metadata originally scraped from Netflix’s public catalog pages.)
+
+> The notebook assumes the standard Kaggle schema. If you switch to a different mirror, ensure the core columns exist (e.g., `title`, `type`, `listed_in`, `country`, `rating`, `date_added`, `release_year`, `duration`).
+
+---
+
+## 🔧 Tech stack
+
+- **Python** (Jupyter in **VS Code**)  
+- `pandas`, `numpy`, `matplotlib`  
+- Clean, auditable cells; **no scikit-learn / no ML**
+
+---
+
+## 🚀 What I’d add next (optional)
+
+- A small **country selector** cell to regenerate the gap chart dynamically.
+- A 1-page `reports/insights.md` summarizing two charts + three bullets for a chosen market.
+- A light Streamlit wrapper (later) to make the visuals interactive for non-technical reviewers.
+
+---
+
+## 📝 Author
+
+Built by **Suvayan** as a portfolio-grade analytics project focused on **business impact**, **reproducibility**, and **clarity**.
+
+
+
 
