@@ -82,14 +82,14 @@ This project addresses those questions with a transparent analysis of the Netfli
 **Rating Distribution**  
 ![Rating distribution](reports/figures/rating_distribution.png)
 
-**Top 20 Countries**  
-![Top 20 genres](reports/figures/top20_countries.png)
-
 **Median Movie Duration by Genre**  
 ![Median duration by genre (movies)](reports/figures/median_duration_by_genre_movies.png)
 
 **Country–Genre Content Gaps (example: France)**  
 ![Under-indexed genres in France](reports/figures/content_gaps_france.png)
+
+**Top 20 Countries**  
+![Top 20 genres](reports/figures/top20_countries.png)
 
 ---
 
