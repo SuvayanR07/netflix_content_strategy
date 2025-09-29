@@ -82,11 +82,8 @@ This project addresses those questions with a transparent analysis of the Netfli
 **Rating Distribution**  
 ![Rating distribution](reports/figures/rating_distribution.png)
 
-**Top 20 Genres**
-<img src="reports/figures/top20_genres.png" width="800" alt="Top 20 genres">
-
-**Genre × Type Heatmap**
-<img src="reports/figures/genre_type_heatmap.png" width="800" alt="Genre × Type heatmap">
+**Top 20 Genres**  
+![Top 20 genres](reports/figures/top20_countries.png)
 
 **Median Movie Duration by Genre**  
 ![Median duration by genre (movies)](reports/figures/median_duration_by_genre_movies.png)
