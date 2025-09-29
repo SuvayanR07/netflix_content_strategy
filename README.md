@@ -55,12 +55,11 @@ This project addresses those questions with a transparent analysis of the Netfli
 ├── figures/ # PNG charts auto-saved by the notebook
 └── tables/ # CSV tables (e.g., genre matrix, gap tables)
 
-
 ---
 
 ## 🧪 Methods (what’s inside the notebook)
 
-- **Load & Clean:** lower-case headers, trim whitespace, parse `date_added`, coerce `release_year`, standardize `rating` and `type`, and drop duplicates.
+- **Load & Clean:** lower-case headers, trim whitespace, parse `date_added`, extract `release_year`, standardize `rating` and `type`, and drop duplicates.
 - **Feature Engineering:**  
   - `year_added`, `month_added`  
   - `duration_minutes` (movies direct, TV with a documented heuristic)  
@@ -75,9 +74,7 @@ This project addresses those questions with a transparent analysis of the Netfli
 
 ---
 
-## 📈 Paste-in screenshots (replace with your image paths)
-
-> Replace the image paths below with the PNGs auto-saved into `reports/figures/`.
+## 📈 Figures
 
 **Catalog Trend (Movies vs TV Shows)**  
 ![Trend — titles per year by type](reports/figures/trend_titles_by_type.png)
@@ -99,7 +96,7 @@ This project addresses those questions with a transparent analysis of the Netfli
 
 ---
 
-## 🧩 How this helps the business
+## 🧩 How this helps the Neflix
 
 - **Commissioning & Acquisition:**  
   The **gap analysis** pinpoints under-served genres by country, creating a ready-made shortlist for acquisitions or local commissions.
@@ -119,9 +116,7 @@ This project addresses those questions with a transparent analysis of the Netfli
 
 - **Source:** Kaggle — *Netflix Movies and TV Shows* (`netflix_titles.csv`).  
   (Community-compiled metadata originally scraped from Netflix’s public catalog pages.)
-
-> The notebook assumes the standard Kaggle schema. If you switch to a different mirror, ensure the core columns exist (e.g., `title`, `type`, `listed_in`, `country`, `rating`, `date_added`, `release_year`, `duration`).
-
+  
 ---
 
 ## 🔧 Tech stack
@@ -132,17 +127,9 @@ This project addresses those questions with a transparent analysis of the Netfli
 
 ---
 
-## 🚀 What I’d add next (optional)
-
-- A small **country selector** cell to regenerate the gap chart dynamically.
-- A 1-page `reports/insights.md` summarizing two charts + three bullets for a chosen market.
-- A light Streamlit wrapper (later) to make the visuals interactive for non-technical reviewers.
-
----
-
 ## 📝 Author
 
-Built by **Suvayan** as a portfolio-grade analytics project focused on **business impact**, **reproducibility**, and **clarity**.
+Built by **Suvayan Rakshit** as a portfolio-grade analytics project focused on **business impact**, **reproducibility**, and **clarity**.
 
 
 
